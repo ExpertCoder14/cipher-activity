@@ -1,6 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="8.5in" height="11in" viewBox="0 0 8.5 11">
 	<defs>
 		<rect id="blank" width="0.375" height="0.375" transform="translate(-0.1875, 0)" fill="none" stroke="silver" stroke-width="0.01" />
+
+		<!-- Define all pigpen letters -->
 		<path class="pigpen" id="pigpen-a" d="M 1 0 L 1 1 0 1" />
 		<path class="pigpen" id="pigpen-b" d="M 1 0 L 1 1 0 1 0 0" />
 		<path class="pigpen" id="pigpen-c" d="M 0 0 L 0 1 1 1" />
@@ -89,6 +91,7 @@
 			stroke: black;
 			stroke-width: 0.1;
 			stroke-linecap: square;
+			stroke-linejoin: round;
 		}
 	</style>
 	
@@ -216,4 +219,5 @@
 	</g-->
 	<text x="8.25" y="10.75" text-anchor="end" alignment-baseline="middle" font-size="0.1" font-family="Lato" fill="black">Created by ExpertCoder14</text>
 	<!-- line x1="1.125" y1="2" x2="7.375" y2="2" fill="none" stroke="black" stroke-width="0.01"/ -->
+	<script href="../scripts/page_3.js"></script>
 </svg>

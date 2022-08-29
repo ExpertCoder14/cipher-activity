@@ -1,13 +1,38 @@
+/**
+ * page5-script.js
+ * This script fills in the values in the tables on Page5.svg.
+ * 
+ * # table-a is the Binary Cipher.
+ * # table-b through table-d are the three tables for the ASCII characters.
+ */
+
+
+// Set your message using the variable below.
+let message = "The Final Cipher's Key is SIX";
+
 let svgNS = "http://www.w3.org/2000/svg";
+let tableA = document.querySelector('#table-a');
 
-let message = 'The Final Cipher\'s Key is SIX';
+// TABLE A CODE
 
-let x = 0;
-let y = 0;
+// Change table size
+tableA.setAttribute('viewBox', '0 0 10 ' + (message.length + 1));
 
+// Draw the vertical lines
+for (let i = 0; i < 7; ++i) {
+	let line = document.createElementNS(svgNS, 'line');
+	line.classList.add('vertical');
+	line.setAttribute('x1', (i + 1).toString());
+	line.setAttribute('x2', (i + 1).toString());
+	line.setAttribute('y1', 0);
+	line.setAttribute('y2', message.length + 1);
+	tableA.prepend(line);
+}
+
+// Draw the binary code for each character
 for (let i = 0; i < message.length; ++i) {
+	if (message.charCodeAt(i) > 127) console.log("Error: Character '" + message.charAt(i) + "' is not an ASCII character.");
 	let currentChar = message.charCodeAt(i).toString(2);
-	console.log(currentChar);
 	if (currentChar.length == 6) {
 		currentChar = '0' + currentChar;
 	}
@@ -16,13 +41,20 @@ for (let i = 0; i < message.length; ++i) {
 		newText.innerHTML = currentChar.charAt(j);
 		newText.setAttribute('y', i + 1.5);
 		newText.setAttribute('x', j + 0.5);
-		document.querySelector('#table-a').appendChild(newText);
+		tableA.appendChild(newText);
 	}
+
+	// Create the line below the code
+	let line = document.createElementNS(svgNS, 'line');
+	line.setAttribute('x1', 0);
+	line.setAttribute('x2', 10);
+	line.setAttribute('y1', i + 2);
+	line.setAttribute('y2', i + 2);
+	document.querySelector('#table-a').appendChild(line);
+
 }
 
 for (let currentChar = 32, index = 0; currentChar < 65; ++currentChar, ++index) {
-	console.log(currentChar);
-	console.log(String.fromCharCode(currentChar));
 
 	let newText = document.createElementNS(svgNS, 'text');
 	newText.innerHTML = currentChar;
@@ -40,8 +72,6 @@ for (let currentChar = 32, index = 0; currentChar < 65; ++currentChar, ++index) 
 }
 
 for (let currentChar = 65, index = 0; currentChar < 97; ++currentChar, ++index) {
-	console.log(currentChar);
-	console.log(String.fromCharCode(currentChar));
 
 	let newText = document.createElementNS(svgNS, 'text');
 	newText.innerHTML = currentChar;
@@ -60,8 +90,6 @@ for (let currentChar = 65, index = 0; currentChar < 97; ++currentChar, ++index) 
 }
 
 for (let currentChar = 97, index = 0; currentChar < 127; ++currentChar, ++index) {
-	console.log(currentChar);
-	console.log(String.fromCharCode(currentChar));
 
 	let newText = document.createElementNS(svgNS, 'text');
 	newText.innerHTML = currentChar;
