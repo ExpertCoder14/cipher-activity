@@ -102,8 +102,8 @@
 		</g>
 	</g>
 	<g id="hint" transform="translate(2.25, 9.125)">
-		<text x="0.125" y="0.25" alignment-baseline="middle" font-size="0.25" font-family="Lato" fill="white">Each row is one letter.</text>
-		<text x="0.125" y="0.55" alignment-baseline="middle" font-size="0.25" font-family="Lato" fill="white">Look at the Scratch example</text>
+		<text x="0.125" y="0.25" alignment-baseline="middle" font-size="0.25" font-family="Lato" fill="white">Each row is one letter</text>
+		<text x="0.125" y="0.55" alignment-baseline="middle" font-size="0.25" font-family="Lato" fill="white">Use the machine to help you</text>
 	</g>
 	<text x="8.25" y="10.75" text-anchor="end" alignment-baseline="middle" font-size="0.1" font-family="Lato" fill="black">Created by ExpertCoder14</text>
 	<!-- line x1="1.125" y1="2" x2="7.375" y2="2" fill="none" stroke="black" stroke-width="0.01"/ -->

@@ -24,6 +24,9 @@
 			stroke: black;
 			stroke-width: 0.05px;
 		}
+		#message tspan {
+			alignment-baseline: middle;
+		}
 	</style>
 	
 	<g id="border">
@@ -44,16 +47,17 @@
 	</g>
 	<g id="top" transform="translate(1.125, 2)">
 		<text x="0" y="0" font-family="Lato" font-size="0.375" fill="black" transform="translate(0.25, 0.5)">Decode this:</text>
-		<text x="3.125" y="1.5" text-anchor="middle" alignment-baseline="middle" font-family="Consolas" font-size="0.375" fill="black">znk ykixkz cuxj oy hashkxynuuz</text>
+		<text id="message" text-anchor="middle" font-family="Consolas" font-size="0.375" fill="black">
+		</text>
 	</g>
 	<g id="bottom" transform="translate(1.125, 5.625)">
 		<text x="0" y="0" font-family="Lato" font-size="0.375" fill="black" transform="translate(0.25, 0.5)">Cipher Helper:</text>
-		<g class="table" transform="translate(0.25, 0.5)">
+		<g class="table" transform="translate(0.375, 0.5)">
 			<svg id="table-a" width="5.5" height="1.5" viewBox="0 0 13 2">
 				<line x1="0" y1="1" x2="13" y2="1" style="stroke: gray;"/>
 			</svg>
 		</g>
-		<g class="table" transform="translate(0.25, 1.5)">
+		<g class="table" transform="translate(0.375, 1.5)">
 			<svg id="table-b" width="5.5" height="1.5" viewBox="0 0 13 2">
 				<line x1="0" y1="1" x2="13" y2="1" style="stroke: gray;"/>
 			</svg>

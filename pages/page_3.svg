@@ -110,35 +110,7 @@
 		<!--rect x="2.25" y="9.125" width="3.5" height="0.75" fill="none" stroke="white" stroke-width="0.05" /-->
 		<rect x="6.25" y="9.125" width="0.75" height="0.75" fill="#FFF7C0" stroke="black" stroke-width="0.05" />
 		<line class="theme" x1="1" y1="5.5" x2="7.5" y2="5.5" />
-		<g transform="translate(1.5, 2.625)scale(0.75)">
-			<use href="#pigpen-i" transform="scale(0.5)" />
-			<use href="#pigpen-t" transform="scale(0.5) translate(1.5, 0)" />
-			<use href="#pigpen-i" transform="scale(0.5) translate(4, 0)" />
-			<use href="#pigpen-s" transform="scale(0.5) translate(5.5, 0)" />
-
-			<use href="#pigpen-g" transform="scale(0.5) translate(0, 1.5)" />
-			<use href="#pigpen-u" transform="scale(0.5) translate(1.5, 1.5)" />
-			<use href="#pigpen-a" transform="scale(0.5) translate(3, 1.5)" />
-			<use href="#pigpen-r" transform="scale(0.5) translate(4.5, 1.5)" />
-			<use href="#pigpen-d" transform="scale(0.5) translate(6, 1.5)" />
-			<use href="#pigpen-e" transform="scale(0.5) translate(7.5, 1.5)" />
-			<use href="#pigpen-d" transform="scale(0.5) translate(9, 1.5)" />
-
-			<use href="#pigpen-b" transform="scale(0.5) translate(0, 3)" />
-			<use href="#pigpen-y" transform="scale(0.5) translate(1.5, 3)" />
-			<use href="#pigpen-a" transform="scale(0.5) translate(4, 3)" />
-
-			<use href="#pigpen-g" transform="scale(0.5) translate(0, 4.5)" />
-			<use href="#pigpen-i" transform="scale(0.5) translate(1.5, 4.5)" />
-			<use href="#pigpen-a" transform="scale(0.5) translate(3, 4.5)" />
-			<use href="#pigpen-n" transform="scale(0.5) translate(4.5, 4.5)" />
-			<use href="#pigpen-t" transform="scale(0.5) translate(6, 4.5)" />
-
-			<use href="#pigpen-t" transform="scale(0.5) translate(0, 6)" />
-			<use href="#pigpen-o" transform="scale(0.5) translate(1.5, 6)" />
-			<use href="#pigpen-a" transform="scale(0.5) translate(3, 6)" />
-			<use href="#pigpen-d" transform="scale(0.5) translate(4.5, 6)" />
-		</g>
+		<g id="message" transform="translate(1.5, 2.625) scale(0.75)" />
 	</g>
 	<g id="top" transform="translate(1.125, 2)">
 		<text x="0" y="0" font-family="Lato" font-size="0.375" fill="black" transform="translate(0.25, 0.5)">Decode this:</text>

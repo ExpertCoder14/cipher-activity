@@ -2,8 +2,13 @@
  * page5-script.js
  * This script fills in the values in the tables on Page5.svg.
  * 
- * # table-a is the Binary Cipher.
- * # table-b through table-d are the three tables for the ASCII characters.
+ * - table-a is the Binary Cipher.
+ * - table-b through table-d are the three tables for the ASCII characters.
+ * 
+ * HOW TO USE
+ * 
+ * 1. Enter your message into the below variable `message`.
+ * 2. Open the file in `pages/page_5.svg`. The table should be automatically filled with your message.
  */
 
 
