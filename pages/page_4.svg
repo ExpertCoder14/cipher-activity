@@ -51,10 +51,7 @@
 	</g>
 	<g id="top" transform="translate(1.125, 2)">
 		<text x="0" y="0" font-family="Lato" font-size="0.375" fill="black" transform="translate(0.25, 0.5)">Decode this:</text>
-		<text transform="translate(0.25)" font-family="Consolas" font-size="0.25" fill="black">
-			<tspan x="0" y="1">daadxa aaxaddgx gxaxgaga xadd</tspan>
-			<tspan x="0" y="1.75">gxfgax ddaxdxggaxgx xfadggfa</tspan>
-		</text>
+		<text id="message" transform="translate(0.25)" font-family="Consolas" font-size="0.25" fill="black" />
 	</g>
 	<g id="bottom" transform="translate(1.125, 5.625)">
 		<text x="0" y="0" font-family="Lato" font-size="0.375" fill="black" transform="translate(0.25, 0.5)">Cipher Helper:</text>

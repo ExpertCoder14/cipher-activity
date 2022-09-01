@@ -4,7 +4,7 @@
 let message = "you must tell us\nthe secret word";
 // Enter the alphabet here, length should be a perfect square (25, 36, etc)
 let alphabet = 'abcdefghiklmnopqrstuvwxyz';
-// Enter the key for the cipher (no repeat letters, `telephone` becomes `telphon`)
+// Enter the key for the cipher (no repeat letters, `bookkeeper` becomes `bokepr`)
 let key = "monkeys";
 // Enter the grid headers here. Length should be the square root of the length of the alphabet (25 letters means this should be 5 letters long)
 let gridHeaders = 'adfgx';
@@ -55,4 +55,20 @@ for (let i = 0; i < 25; ++i) {
 	grid.appendChild(newText);
 }
 
+// Encode message
 message = message.split('\n');
+message.forEach((line, lineNum) => {
+	let encLine = '';
+	for (let i = 0; i < line.length; ++i) {
+		if (line.charCodeAt(i) >= 97 && line.charCodeAt(i) <= 122) {
+			encLine += gridHeaders.charAt(Math.floor(alphabet.indexOf(line.charAt(i)) / 5));
+			encLine += gridHeaders.charAt(alphabet.indexOf(line.charAt(i)) % 5);
+		} else encLine += line.charAt(i);
+	}
+	console.log(encLine);
+	let newText = document.createElementNS(svgNS, 'tspan');
+	newText.appendChild(document.createTextNode(encLine));
+	newText.setAttribute('x', 0);
+	newText.setAttribute('y', lineNum * 0.75 + 1);
+	document.querySelector('#message').appendChild(newText);
+});
