@@ -31,14 +31,20 @@ let subs = {
 	' ': '(spatie)'
 };
 
+// MODIFY VARIABLES ABOVE THIS LINE
+
 let svgNS = "http://www.w3.org/2000/svg";
 message = message.split('\n');
 
 message.forEach((line, lineNum) => {
 	let encLine = '';
+
+	// Substitute each letter for the corresponding word and add it to `encLine`
 	for (let i = 0; i < line.length; ++i) {
 		encLine += subs[line.charAt(i)] + (i == line.length - 1 ? '' : ' ');
 	}
+
+	// Create new `<tspan>` element, set properties, and add it to the page
 	let newText = document.createElementNS(svgNS, 'tspan');
 	newText.setAttribute('x', '0.125');
 	newText.setAttribute('y', lineNum * 0.3 + 1);

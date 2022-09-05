@@ -1,4 +1,4 @@
-// Type the message to encode
+// Enter the message to encrypt. Use `\n` to break lines.
 let message = 'the secret word\nis bumbershoot';
 // Enter the number of characters to shift
 let key = 6;
@@ -8,6 +8,9 @@ let fontSize = 36;
 // Select the distance between lines. 96 = 1in
 let linePadding = 36;
 
+// MODIFY VARIABLES ABOVE THIS LINE
+
+// Function to caesar cipher entered message
 function caesarCipher(msg, key){
 	let encMsg = "";
 	for(var i = 0; i < msg.length; i++) {
@@ -28,16 +31,18 @@ function caesarCipher(msg, key){
 	return encMsg;
 }
 
+// Prepare environment and set font size
 let svgNS = "http://www.w3.org/2000/svg";
-
 message = caesarCipher(message, key).split('\n');
 
 let msgElm = document.querySelector('#message');
 msgElm.setAttribute('font-size', fontSize / 96);
 
+// Calculate line height and height for the first line
 let lineHeight = (fontSize / 96) + (linePadding / 96);
 let startHeight = 1.6875 - ((message.length - 1) / 2 * lineHeight);
 
+// Add each line of the message to the page
 message.forEach((line, i) => {
 	let newText = document.createElementNS(svgNS, 'tspan');
 	newText.setAttribute('x', '3.125');

@@ -1,19 +1,7 @@
-/**
- * page5-script.js
- * This script fills in the values in the tables on Page5.svg.
- * 
- * - table-a is the Binary Cipher.
- * - table-b through table-d are the three tables for the ASCII characters.
- * 
- * HOW TO USE
- * 
- * 1. Enter your message into the below variable `message`.
- * 2. Open the file in `pages/page_5.svg`. The table should be automatically filled with your message.
- */
-
-
-// Set your message using the variable below.
+// Enter the message to encrypt. Supports all ASCII characters.
 let message = "The Final Cipher's Key is SIX";
+
+// MODIFY VARIABLES ABOVE THIS LINE
 
 let svgNS = "http://www.w3.org/2000/svg";
 let tableA = document.querySelector('#table-a');
@@ -34,13 +22,17 @@ for (let i = 0; i < 7; ++i) {
 	tableA.prepend(line);
 }
 
-// Draw the binary code for each character
+// Draw the binary code for each character and the line below it
 for (let i = 0; i < message.length; ++i) {
+	// Get binary representation of each character
 	if (message.charCodeAt(i) > 127) console.log("Error: Character '" + message.charAt(i) + "' is not an ASCII character.");
 	let currentChar = message.charCodeAt(i).toString(2);
 	if (currentChar.length == 6) {
+		// Add leading zero to bring the length of the string to 7
 		currentChar = '0' + currentChar;
 	}
+
+	// Add the fetched binary code to the page
 	for (let j = 0; j < 7; ++j) {
 		let newText = document.createElementNS(svgNS, 'text');
 		newText.innerHTML = currentChar.charAt(j);
@@ -49,18 +41,23 @@ for (let i = 0; i < message.length; ++i) {
 		tableA.appendChild(newText);
 	}
 
-	// Create the line below the code
+	// Create the line below each binary number
 	let line = document.createElementNS(svgNS, 'line');
 	line.setAttribute('x1', 0);
 	line.setAttribute('x2', 10);
 	line.setAttribute('y1', i + 2);
 	line.setAttribute('y2', i + 2);
 	document.querySelector('#table-a').appendChild(line);
-
 }
 
-for (let currentChar = 32, index = 0; currentChar < 65; ++currentChar, ++index) {
+// TABLES B, C, and D
 
+/*
+	The code below this point creates the Cipher Helper on the right hand side of the page.
+	For each character, it prints the character's code on the left, and prints the actual character on the right.
+*/
+
+for (let currentChar = 32, index = 0; currentChar < 65; ++currentChar, ++index) {
 	let newText = document.createElementNS(svgNS, 'text');
 	newText.innerHTML = currentChar;
 	newText.setAttribute('x', 1);
@@ -77,7 +74,6 @@ for (let currentChar = 32, index = 0; currentChar < 65; ++currentChar, ++index) 
 }
 
 for (let currentChar = 65, index = 0; currentChar < 97; ++currentChar, ++index) {
-
 	let newText = document.createElementNS(svgNS, 'text');
 	newText.innerHTML = currentChar;
 	newText.setAttribute('x', 1);
@@ -95,7 +91,6 @@ for (let currentChar = 65, index = 0; currentChar < 97; ++currentChar, ++index) 
 }
 
 for (let currentChar = 97, index = 0; currentChar < 127; ++currentChar, ++index) {
-
 	let newText = document.createElementNS(svgNS, 'text');
 	newText.innerHTML = currentChar;
 	newText.setAttribute('x', 1);
