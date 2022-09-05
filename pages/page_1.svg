@@ -1,6 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="8.5in" height="11in" viewBox="0 0 8.5 11">
 	<defs>
-		<rect id="blank" width="0.375" height="0.375" transform="translate(-0.1875, 0)" fill="none" stroke="silver" stroke-width="0.01" />
+		<rect id="blank" width="1" height="1" />
+		<marker id="pointer"  markerWidth="3" markerHeight="4" refX="2" refY="2" orient="auto" markerUnits="userSpaceOnUse">
+			<polyline points="1.75,1.75 2,2 1.75,2.25" fill="none" stroke="#00C000" stroke-width="0.15" />
+		</marker>
 	</defs>
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Lato&amp;display=swap');
@@ -13,8 +16,25 @@
 			fill: #00C000;
 			stroke: none;
 		}
+		polyline, rect {
+			stroke-linecap: round;
+			stroke-linejoin: round;
+		}
+		.cipher polyline {
+			stroke-width: 0.15px;
+		}
+		.cipher use {
+			stroke-width: 0.1px;
+			fill: none;
+			stroke: lightgray;
+		}
+		text.message {
+			text-anchor: middle;
+			alignment-baseline: middle;
+			font-family: Consolas;
+			font-size: 0.375px;
+		}
 	</style>
-	
 	<g id="border">
 		<rect x="1.125" y="2" width="6.25" height="7" fill="#E0FFE0" />
 		<rect class="theme" x="1" y="1" width="6.5" height="9" rx="0.5" ry="0.5" />
@@ -34,24 +54,14 @@
 	</g>
 	<g id="top" transform="translate(1.125, 2)">
 		<text x="0" y="0" font-family="Lato" font-size="0.375" fill="black" transform="translate(0.25, 0.5)">Decode this:</text>
-		<text x="3.125" y="1.4583" text-anchor="middle" alignment-baseline="middle" font-family="Consolas" font-size="0.375" fill="black">dargnl</text>
-		<text x="3.125" y="2.7916" text-anchor="middle" alignment-baseline="middle" font-family="Consolas" font-size="0.375" fill="black">ereiod</text>
+		<text id="top-word" class="message" x="3.125" y="1.5"></text>
+		<text id="bottom-word" class="message" x="3.125" y="2.5"></text>
 	</g>
 	<g id="bottom" transform="translate(1.125, 5.625)">
-	<text x="0" y="0" font-family="Lato" font-size="0.375" fill="black" transform="translate(0.25, 0.5)">Cipher Helper:</text>
-		<path d="M 0 0 l 0.5 0.75 0.5 -0.75 0.5 0.75 0.5 -0.75 0.5 0.75 0.5 -0.75 0.5 0.75 0.5 -0.75 0.5 0.75 0.5 -0.75 0.5 0.75" transform="translate(0.375, 1.3125)" fill="none" stroke="#00C000" stroke-width="0.05" />
-		<use href="#blank" x="0.375" y="1.3125" transform="translate(0, -0.5)" />
-		<use href="#blank" x="0.875" y="2.0625" transform="translate(0, 0.125)" />
-		<use href="#blank" x="1.375" y="1.3125" transform="translate(0, -0.5)" />
-		<use href="#blank" x="1.875" y="2.0625" transform="translate(0, 0.125)" />
-		<use href="#blank" x="2.375" y="1.3125" transform="translate(0, -0.5)" />
-		<use href="#blank" x="2.875" y="2.0625" transform="translate(0, 0.125)" />
-		<use href="#blank" x="3.375" y="1.3125" transform="translate(0, -0.5)" />
-		<use href="#blank" x="3.875" y="2.0625" transform="translate(0, 0.125)" />
-		<use href="#blank" x="4.375" y="1.3125" transform="translate(0, -0.5)" />
-		<use href="#blank" x="4.875" y="2.0625" transform="translate(0, 0.125)" />
-		<use href="#blank" x="5.375" y="1.3125" transform="translate(0, -0.5)" />
-		<use href="#blank" x="5.875" y="2.0625" transform="translate(0, 0.125)" />
+		<text x="0" y="0" font-family="Lato" font-size="0.375" fill="black" transform="translate(0.25, 0.5)">Cipher Helper:</text>
+		<g transform="translate(0.25, 0.75)"><svg id="cipher" class="cipher" width="5.75" height="2.5" viewBox="0 0 4 6">
+			<polyline id="cipher-line" marker-end="url(#pointer)" fill="none" stroke="#00C000" />
+		</svg></g>
 	</g>
 	<g id="hint" transform="translate(2.25, 9.125)">
 		<text x="0.125" y="0.25" alignment-baseline="middle" font-size="0.25" font-family="Lato" fill="white">Top word on top</text>
@@ -59,4 +69,5 @@
 	</g>
 	<text x="8.25" y="10.75" text-anchor="end" alignment-baseline="middle" font-size="0.1" font-family="Lato" fill="black">Created by ExpertCoder14</text>
 	<!-- line x1="1.125" y1="2" x2="7.375" y2="2" fill="none" stroke="black" stroke-width="0.01"/ -->
+	<script href="../scripts/page_1.js" />
 </svg>
